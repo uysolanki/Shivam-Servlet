@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+	<welcome-file-list>
+        <welcome-file>one.html</welcome-file>
+    </welcome-file-list>
+
+	<servlet>
+      <servlet-name>Virat</servlet-name>
+      <servlet-class>OddEvenServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>Virat</servlet-name>
+        <url-pattern>/shivam</url-pattern>
+	</servlet-mapping>
+</web-app>
