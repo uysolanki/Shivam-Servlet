@@ -31,11 +31,14 @@ public class OddEvenServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		int n1= Integer.parseInt(request.getParameter("t1"));
-				if(n1%2==0)
-					out.print("<h1><font color='red'>Number is EVEN</font></h1");
-				else
-					out.print("<font color='green'>Number is ODD</font>");
+		int n2= Integer.parseInt(request.getParameter("t2"));
+		int n3=n1+n2;
+//				if(n1%2==0)
+//					out.print("<h1><font color='red'>Number is EVEN</font></h1");
+//				else
+//					out.print("<font color='green'>Number is ODD</font>");
 	
+		out.print(n3);
 	}
 
 	/**
