@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,9 +35,13 @@ public class LoginServlet extends HttpServlet {
 		String username=request.getParameter("t1");
 		String password= request.getParameter("t2");
 		
+		ServletContext myContext=getServletContext();
+		String x=(String)myContext.getInitParameter("appdate");
+		System.out.println(x);
+		
 		if(username.equals(password))
 		{
-			//out.print("Login Successful");
+			out.print("Login Successful");
 			RequestDispatcher rd=request.getRequestDispatcher("shivam");
 			rd.forward(request, response);
 		}
