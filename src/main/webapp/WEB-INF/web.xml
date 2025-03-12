@@ -2,7 +2,7 @@
 <web-app>
 
 	<welcome-file-list>
-        <welcome-file>login.html</welcome-file>
+        <welcome-file>player-registration-form.html</welcome-file>
     </welcome-file-list>
     
     <context-param>
@@ -13,6 +13,31 @@
     <context-param>
     	<param-name>appdate</param-name>
     	<param-value>07March2025</param-value>
+    </context-param>
+    
+     <context-param>
+    	<param-name>mysqlURL</param-name>
+    	<param-value>jdbc:mysql://localhost:3306/</param-value>
+    </context-param>
+    
+     <context-param>
+    	<param-name>databasename</param-name>
+    	<param-value>shivamdb</param-value>
+    </context-param>
+    
+     <context-param>
+    	<param-name>databaseusername</param-name>
+    	<param-value>root</param-value>
+    </context-param>
+    
+     <context-param>
+    	<param-name>databasepassword</param-name>
+    	<param-value></param-value>
+    </context-param>
+    
+     <context-param>
+    	<param-name>databasedrivername</param-name>
+    	<param-value>com.mysql.jdbc.Driver</param-value>
     </context-param>
 
 	<servlet>
@@ -39,4 +64,70 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
 	</servlet-mapping>
+	
+	<filter>
+      <filter-name>ValidateLogin</filter-name>
+      <filter-class>ValidateLoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+        <filter-name>ValidateLogin</filter-name>
+        <url-pattern>/login</url-pattern>
+	</filter-mapping>
+	
+	
+	<servlet>
+      <servlet-name>SaveStudent</servlet-name>
+      <servlet-class>SaveStudentServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>SaveStudent</servlet-name>
+        <url-pattern>/saveStudent</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+       <servlet-name>SaveEmployee</servlet-name>
+      <servlet-class>SaveEmployeeServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>SaveEmployee</servlet-name>
+        <url-pattern>/saveEmployee</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+      <servlet-name>SavePlayer</servlet-name>
+      <servlet-class>SavePlayerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>SavePlayer</servlet-name>
+        <url-pattern>/savePlayer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>FSD</servlet-name>
+      <servlet-class>AddServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>FSD</servlet-name>
+        <url-pattern>/shivanjali</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+       <filter-name>FSDFilter</filter-name>
+      <filter-class>ValidateNumbersFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+        <filter-name>FSDFilter</filter-name>
+        <url-pattern>/shivanjali</url-pattern>
+	</filter-mapping>
+	
+	
 </web-app>
