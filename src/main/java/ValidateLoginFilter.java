@@ -44,7 +44,6 @@ public class ValidateLoginFilter extends HttpFilter implements Filter {
 		String username=request.getParameter("t1");
 		String password= request.getParameter("t2");
 		
-	
 		
 		if(username.length()>=3 && password.length()>=6)
 		{
@@ -55,9 +54,7 @@ public class ValidateLoginFilter extends HttpFilter implements Filter {
 			out.print("<font color='red'>Username Should be 3 or more chars, Pass should be 6 or more chars</font>");
 			RequestDispatcher rd=request.getRequestDispatcher("/login.html");
 			rd.include(request, response);
-		}
-		
-		
+		}	
 	}
 
 	/**

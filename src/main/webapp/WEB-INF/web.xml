@@ -2,7 +2,7 @@
 <web-app>
 
 	<welcome-file-list>
-        <welcome-file>player-registration-form.html</welcome-file>
+        <welcome-file>login-new.html</welcome-file>
     </welcome-file-list>
     
     <context-param>
@@ -129,5 +129,45 @@
         <url-pattern>/shivanjali</url-pattern>
 	</filter-mapping>
 	
+	<servlet>
+      <servlet-name>URLReWriting</servlet-name>
+      <servlet-class>LoginURLServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>URLReWriting</servlet-name>
+        <url-pattern>/loginurlrw</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>URLShopping</servlet-name>
+      <servlet-class>URLShoppingServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>URLShopping</servlet-name>
+        <url-pattern>/shop</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>HiddenFields</servlet-name>
+      <servlet-class>LoginHiddenFieldsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>HiddenFields</servlet-name>
+        <url-pattern>/loginhidden</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+      <servlet-name>HFShopping</servlet-name>
+      <servlet-class>HFShoppingServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>HFShopping</servlet-name>
+        <url-pattern>/shophf</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
