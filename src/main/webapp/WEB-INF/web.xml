@@ -170,4 +170,37 @@
         <url-pattern>/shophf</url-pattern>
 	</servlet-mapping>
 	
+	
+	
+	<servlet>
+      <servlet-name>LoginHttpSession</servlet-name>
+      <servlet-class>LoginHttpSessionServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>LoginHttpSession</servlet-name>
+        <url-pattern>/sessionapi</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+     <servlet-name>SessionShopping</servlet-name>
+      <servlet-class>SessionShoppingServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>SessionShopping</servlet-name>
+        <url-pattern>/shopses</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>hitcount</servlet-name>
+      <servlet-class>HitCountServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>hitcount</servlet-name>
+        <url-pattern>/hit</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
