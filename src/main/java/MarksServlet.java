@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HitCountServlet
+ * Servlet implementation class MarksServlet
  */
-@WebServlet("/HitCountServlet")
-public class HitCountServlet extends HttpServlet {
+@WebServlet("/MarksServlet")
+public class MarksServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HitCountServlet() {
+    public MarksServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,31 +31,27 @@ public class HitCountServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-		Cookie cookies[]=request.getCookies();
+		String studName=request.getParameter("t1");
+		String studClass= request.getParameter("t2");
+		String studAdd= request.getParameter("t3");
 		
-		int visit=1;
-		if(cookies==null)
-		{
-			out.print(visit + " visit");
-			Cookie cookie =new Cookie("hitcount1",String.valueOf(visit));  //hitcount "1"
-			response.addCookie(cookie);
-		}
-		else
-		{
-			for(Cookie c:cookies)
-			{
-				if(c.getName().equals("hitcount1"))
-				{
-					visit=Integer.parseInt(c.getValue());  //visit 2
-					visit++;                               //visit 3
-					out.print(visit + "visit");            //3 visit
-					c.setValue(String.valueOf(visit));		//hitcount "3"
-					c.setMaxAge(60*60*24*365*5);
-					response.addCookie(c);
-					
-				}
-			}
-		}
+		Cookie c1=new Cookie("studName",studName);
+		Cookie c2=new Cookie("studClass",studClass);
+		Cookie c3=new Cookie("studAdd",studAdd);
+		
+		response.addCookie(c1);
+		response.addCookie(c2);
+		response.addCookie(c3);
+		
+		out.print("<form action='result' method='post'>");
+		out.print("Java :<input type='text' name='tjava'><br>");
+		out.print("PHP :<input type='text' name='tphp'><br>");
+		out.print("Software Testting :<input type='text' name='ttest'><br>");
+		out.print("SQL :<input type='text' name='tsql'><br>");
+		out.print("Practical :<input type='text' name='tprac'><br>");
+		out.print("Project :<input type='text' name='tproj'><br>");
+		out.print("<input type='submit' name='s1' value='View Result'>");
+		out.print("</form");
 	}
 
 	/**

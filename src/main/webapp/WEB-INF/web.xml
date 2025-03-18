@@ -203,4 +203,25 @@
         <url-pattern>/hit</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+   	  <servlet-name>student</servlet-name>
+      <servlet-class>MarksServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>student</servlet-name>
+        <url-pattern>/stud</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+   	  <servlet-name>ViewResult</servlet-name>
+      <servlet-class>ViewResultServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+        <servlet-name>ViewResult</servlet-name>
+        <url-pattern>/result</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
